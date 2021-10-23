@@ -1,3 +1,4 @@
+import { ProductService } from './product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +19,9 @@ import { ProductDescriptionComponent } from './product-description/product-descr
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
