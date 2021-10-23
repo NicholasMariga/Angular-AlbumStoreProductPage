@@ -1,10 +1,8 @@
 
 import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import 'rxjs/add/operator/map';
+
 
 @Injectable()
 export class ProductService {
@@ -17,9 +15,7 @@ export class ProductService {
   //That getAlbum() method should return the result of a call 
   //to this._http.get(), and that get() method should take _albumUrl as a parameter.
   getAlbum(id: number) {
-
-    return this._http.get(this._albumUrl);
-
+    return this._http.get(this._albumUrl).map((response) => response.json());
   }
 
 }
