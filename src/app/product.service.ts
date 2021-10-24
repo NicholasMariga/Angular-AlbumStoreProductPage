@@ -17,7 +17,7 @@ export class ProductService {
   //That getAlbum() method should return the result of a call 
   //to this._http.get(), and that get() method should take _albumUrl as a parameter.
   getAlbum(id: number): Observable<Album> {
-    return this._http.get(this._albumUrl).map((response) => response.json());
+    return this._http.get(this._albumUrl).map((response) => <Album>response.json());
   }
 
 }
